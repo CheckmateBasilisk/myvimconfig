@@ -23,3 +23,9 @@ wget https://raw.githubusercontent.com/CheckmateBasilisk/myvimconfig/master/.vim
 :PlugInstall
 ```
 
+## Useful commands
+
+open vim config file (works with nvim)
+```
+:e $MYVIMRC
+```
