@@ -1,5 +1,3 @@
-" put in ~/.config/nvim/
-
 call plug#begin()
 
     " COLOR SCHEMES
