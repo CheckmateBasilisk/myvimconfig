@@ -46,7 +46,8 @@ call plug#begin()
 
 call plug#end()
 
-" this runs lua code, since NVIM has an embedded runtime for it
+" load additional configs from luafile
+    "this runs lua code, since NVIM has an embedded runtime for it
 lua << EOF
     require("user.config")
 EOF
