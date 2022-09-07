@@ -1,4 +1,3 @@
-
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
@@ -12,8 +11,6 @@ return require('packer').startup(function(use)
 
     -- Color Schemes
     vim.cmd "set termguicolors"
-    use {'tomasr/molokai'}
-    vim.cmd "let g:molokai_original = 1"
     use {'AlessandroYorba/Alduin'}
     use {'morhetz/gruvbox'}
 
@@ -32,19 +29,30 @@ return require('packer').startup(function(use)
     -- https://vimawesome.com/plugin/ultisnips
     --Plug 'sirver/ultisnips'
 
+    use { --UNAVAILABLE IN NVIM <7 ??
+        "neovim/nvim-lspconfig",
+        "williamboman/nvim-lsp-installer"
+    }
+    --[[
     -- Autocompletion
-
     ---- THIS IS A MASSIVE RABBIT HOLE I'M NOT WILLING TO DIVE FURTHER FOR NOW
     ---- configs for language server protocol, needed for other plugins
-    --Plug 'williamboman/mason.nvim'
-    --Plug 'williamboman/mason-lspconfig.nvim'
-    --Plug 'neovim/nvim-lspconfig'
-    use {'neovim/nvim-lspconfig'}
+    use { --UNAVAILABLE IN NVIM <7
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+        "neovim/nvim-lspconfig",
+    }
     --   hardcore autocomplete
     --   https://github.com/ms-jpq/coq_nvim
     --Plug 'ms-jpq/coq_nvim', {'branch': 'coq'} -- main one
     --Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'} -- 9000+ snippets
-    
+    --]]
+    use {'ms-jpq/coq_nvim', branch = 'coq'}
+    --[[
+        Please update dependencies using :COQdeps
+        Dependencies will be installed privately inside `/home/lucasnascimento/.local/share/nvim/site/pack/packer/start/coq_nvim/.vars`
+        `rm -rf coq_nvim` will cleanly remove everything
+    --]]
 end)
 
 ----- OLD INIT.VIM -----
