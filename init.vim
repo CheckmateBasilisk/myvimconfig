@@ -26,3 +26,11 @@ filetype indent off
 set noai
 " removing autocomment
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" line count
+set number
+" adds a column (gutter) to the left so diagnostics don't push text aside every time
+set signcolumn=yes
+set signcolumn=number "puts gutter inside the line count
+"highlight SignColumn guibg=darkgrey " gutter color
+"highlight clear SignColumn " same color as bg

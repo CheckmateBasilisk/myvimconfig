@@ -79,6 +79,16 @@ _G.packer_plugins = {
     path = "/home/lucasnascimento/.local/share/nvim/site/pack/packer/start/Alduin",
     url = "https://github.com/AlessandroYorba/Alduin"
   },
+  ["coq.artifacts"] = {
+    loaded = true,
+    path = "/home/lucasnascimento/.local/share/nvim/site/pack/packer/start/coq.artifacts",
+    url = "https://github.com/ms-jpq/coq.artifacts"
+  },
+  coq_nvim = {
+    loaded = true,
+    path = "/home/lucasnascimento/.local/share/nvim/site/pack/packer/start/coq_nvim",
+    url = "https://github.com/ms-jpq/coq_nvim"
+  },
   fzf = {
     loaded = true,
     path = "/home/lucasnascimento/.local/share/nvim/site/pack/packer/start/fzf",
@@ -94,13 +104,18 @@ _G.packer_plugins = {
     path = "/home/lucasnascimento/.local/share/nvim/site/pack/packer/start/gruvbox",
     url = "https://github.com/morhetz/gruvbox"
   },
-  molokai = {
+  ["mason-lspconfig.nvim"] = {
     loaded = true,
-    path = "/home/lucasnascimento/.local/share/nvim/site/pack/packer/start/molokai",
-    url = "https://github.com/tomasr/molokai"
+    path = "/home/lucasnascimento/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    url = "https://github.com/williamboman/mason-lspconfig.nvim"
+  },
+  ["mason.nvim"] = {
+    loaded = true,
+    path = "/home/lucasnascimento/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    url = "https://github.com/williamboman/mason.nvim"
   },
   nerdtree = {
-    commands = { "NERDTree" },
+    commands = { "NERDTree", "NT" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -128,6 +143,7 @@ time([[Defining packer_plugins]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file NT lua require("packer.load")({'nerdtree'}, { cmd = "NT", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file NERDTree lua require("packer.load")({'nerdtree'}, { cmd = "NERDTree", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 time([[Defining lazy-load commands]], false)
 

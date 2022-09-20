@@ -1,13 +1,15 @@
+-- PLUGINS:  https://neovimcraft.com/
+
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
     -- packer manages itself
     use 'wbthomason/packer.nvim'
-    
+
     -- File Browser
     --   :NERDTree
-    use {'scrooloose/nerdtree', cmd = 'NERDTree'} --invoke on command only
+    use {'scrooloose/nerdtree', cmd = {'NERDTree', 'NT'} } --invoke on command only
 
     -- Color Schemes
     vim.cmd "set termguicolors"
@@ -29,18 +31,42 @@ return require('packer').startup(function(use)
     -- https://vimawesome.com/plugin/ultisnips
     --Plug 'sirver/ultisnips'
 
-    use { --UNAVAILABLE IN NVIM <7 ??
+    use { --UNAVAILABLE IN NVIM <7
+        "williamboman/mason.nvim", -- LSP manager, like apt
+        "williamboman/mason-lspconfig.nvim", -- bridges mason and lspconfig
         "neovim/nvim-lspconfig",
-        "williamboman/nvim-lsp-installer"
     }
+    -- starting mason
+    require("mason").setup()
+    require("mason-lspconfig").setup()
+
+    --  TODO: add lazy loading based on filetype
+    -- 'activating' lsp servers
+        --use _ instead of - !!!
+    require("lspconfig").clangd.setup {}
+    require("lspconfig").jedi_language_server.setup{}
+    require("lspconfig").sumneko_lua.setup {}
+    require("lspconfig").rust_analyzer.setup {}
+    --[[
+        :Mason ; choose and install LSPs
+            while editing a file; :LspInstall works like :Mason or :MasonInstall
+        after installing LSPs i need to start/setup them when initializing vim (or when opening a relevant filetype)
+            like so: 
+                require("lspconfig").sumneko_lua.setup {}
+                require("lspconfig").rust_analyzer.setup {}
+            docs: check :h mason-lspconfig @ DYNAMIC SERVER SETUP
+            also check mason-lspconfig.setup_handlers()|
+    --]]
+    --set ups servers i want to use 
+    --  check :h lspconfig-quickstart
+
     --[[
     -- Autocompletion
     ---- THIS IS A MASSIVE RABBIT HOLE I'M NOT WILLING TO DIVE FURTHER FOR NOW
     ---- configs for language server protocol, needed for other plugins
-    use { --UNAVAILABLE IN NVIM <7
-        "williamboman/mason.nvim",
-        "williamboman/mason-lspconfig.nvim",
+    use { --UNAVAILABLE IN NVIM <7 ??
         "neovim/nvim-lspconfig",
+        "williamboman/nvim-lsp-installer"
     }
     --   hardcore autocomplete
     --   https://github.com/ms-jpq/coq_nvim
@@ -48,6 +74,9 @@ return require('packer').startup(function(use)
     --Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'} -- 9000+ snippets
     --]]
     use {'ms-jpq/coq_nvim', branch = 'coq'}
+    use {'ms-jpq/coq.artifacts', branch = 'artifacts'} -- 9000+ snippets
+    -- run once to compile the snippets :COQsnips compile
+    --  <C-h> to jump to fields in snippets
     --[[
         Please update dependencies using :COQdeps
         Dependencies will be installed privately inside `/home/lucasnascimento/.local/share/nvim/site/pack/packer/start/coq_nvim/.vars`

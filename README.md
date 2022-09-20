@@ -3,24 +3,28 @@
 ## For NeoVim (.lua config file)
 
 
-1. Install Plugin Manager (XXX):
+1. Install Plugin Manager (Packer):
+
+https://github.com/wbthomason/packer.nvim
 
 ```
-cli command
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 ```
 
 2. Get the vim configs (init.lua and lua/ directory containing the rest of the config)
 
 ```
-wget https://raw.githubusercontent.com/CheckmateBasilisk/myvimconfig/master/init.lua -P ~/config/nvim
-wget https://raw.githubusercontent.com/CheckmateBasilisk/myvimconfig/master/lua -P ~/config/nvim
-
+git clone git@github.com:CheckmateBasilisk/myvimconfig.git ~/.config/nvim
 ```
+
+and change the branch to nvim-lua
+
 
 3. Inside NeoVIM, get plugins using
 
 ```
-cli command
+:PackerSync
 ```
 
 ## For NeoVim (.vim config file)
