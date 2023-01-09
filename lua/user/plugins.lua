@@ -7,6 +7,12 @@ return require('packer').startup(function(use)
     -- packer manages itself
     use 'wbthomason/packer.nvim'
 
+    -- treesitter is a language parser
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
+
     -- File Browser
     --   :NERDTree
     use {'scrooloose/nerdtree', cmd = {'NERDTree', 'NT'} } --invoke on command only
@@ -81,6 +87,21 @@ return require('packer').startup(function(use)
         Please update dependencies using :COQdeps
         Dependencies will be installed privately inside `/home/lucasnascimento/.local/share/nvim/site/pack/packer/start/coq_nvim/.vars`
         `rm -rf coq_nvim` will cleanly remove everything
+    --]]
+
+    --[[
+    -- norg is a note-taking tool
+    use {
+        "nvim-neorg/neorg",
+        tag = "*",
+        --ft = "norg",
+        after = "nvim-treesitter", -- You may want to specify Telescope here as well
+        config = function()
+            require('neorg').setup {
+                ["core.defaults"] = {}
+            }
+        end
+    }
     --]]
 end)
 

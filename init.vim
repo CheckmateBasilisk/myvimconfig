@@ -1,7 +1,9 @@
+" This file should be at ~/.config/nvim/init.vim
+
 " this runs lua code, since NVIM has an embedded runtime for it
-" load plugin manager and plugins from lua file
+" load plugin manager and plugins from lua file @ ~/.config/nvim/user/plugins.lua
 lua require('user.plugins')
-" additional config in lua
+" additional config in lua @ ~/.config/nvim/user/config.lua
 lua require('user.config')
 
 "colorscheme vimspectrgrey-dark
