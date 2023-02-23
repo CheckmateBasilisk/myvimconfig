@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/lucasnascimento/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/lucasnascimento/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/lucasnascimento/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/lucasnascimento/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/lucasnascimento/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
+local package_path_str = "/home/lucasbm/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/lucasbm/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/lucasbm/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/lucasbm/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/lucasbm/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -76,42 +76,32 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   Alduin = {
     loaded = true,
-    path = "/home/lucasnascimento/.local/share/nvim/site/pack/packer/start/Alduin",
+    path = "/home/lucasbm/.local/share/nvim/site/pack/packer/start/Alduin",
     url = "https://github.com/AlessandroYorba/Alduin"
-  },
-  ["coq.artifacts"] = {
-    loaded = true,
-    path = "/home/lucasnascimento/.local/share/nvim/site/pack/packer/start/coq.artifacts",
-    url = "https://github.com/ms-jpq/coq.artifacts"
-  },
-  coq_nvim = {
-    loaded = true,
-    path = "/home/lucasnascimento/.local/share/nvim/site/pack/packer/start/coq_nvim",
-    url = "https://github.com/ms-jpq/coq_nvim"
   },
   fzf = {
     loaded = true,
-    path = "/home/lucasnascimento/.local/share/nvim/site/pack/packer/start/fzf",
+    path = "/home/lucasbm/.local/share/nvim/site/pack/packer/start/fzf",
     url = "https://github.com/junegunn/fzf"
   },
   ["fzf.vim"] = {
     loaded = true,
-    path = "/home/lucasnascimento/.local/share/nvim/site/pack/packer/start/fzf.vim",
+    path = "/home/lucasbm/.local/share/nvim/site/pack/packer/start/fzf.vim",
     url = "https://github.com/junegunn/fzf.vim"
   },
   gruvbox = {
     loaded = true,
-    path = "/home/lucasnascimento/.local/share/nvim/site/pack/packer/start/gruvbox",
+    path = "/home/lucasbm/.local/share/nvim/site/pack/packer/start/gruvbox",
     url = "https://github.com/morhetz/gruvbox"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
-    path = "/home/lucasnascimento/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    path = "/home/lucasbm/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
     url = "https://github.com/williamboman/mason-lspconfig.nvim"
   },
   ["mason.nvim"] = {
     loaded = true,
-    path = "/home/lucasnascimento/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    path = "/home/lucasbm/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
   nerdtree = {
@@ -119,22 +109,32 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = false,
     only_cond = false,
-    path = "/home/lucasnascimento/.local/share/nvim/site/pack/packer/opt/nerdtree",
+    path = "/home/lucasbm/.local/share/nvim/site/pack/packer/opt/nerdtree",
     url = "https://github.com/scrooloose/nerdtree"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "/home/lucasnascimento/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    path = "/home/lucasbm/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/lucasbm/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/home/lucasnascimento/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    path = "/home/lucasbm/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
+  },
+  ["vim-better-whitespace"] = {
+    loaded = true,
+    path = "/home/lucasbm/.local/share/nvim/site/pack/packer/start/vim-better-whitespace",
+    url = "https://github.com/ntpeters/vim-better-whitespace"
   },
   ["vim-markdown-toc"] = {
     loaded = true,
-    path = "/home/lucasnascimento/.local/share/nvim/site/pack/packer/start/vim-markdown-toc",
+    path = "/home/lucasbm/.local/share/nvim/site/pack/packer/start/vim-markdown-toc",
     url = "https://github.com/mzlogin/vim-markdown-toc"
   }
 }
@@ -143,8 +143,20 @@ time([[Defining packer_plugins]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file NT lua require("packer.load")({'nerdtree'}, { cmd = "NT", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file NERDTree lua require("packer.load")({'nerdtree'}, { cmd = "NERDTree", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.api.nvim_create_user_command, 'NT', function(cmdargs)
+          require('packer.load')({'nerdtree'}, { cmd = 'NT', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'nerdtree'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('NT ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'NERDTree', function(cmdargs)
+          require('packer.load')({'nerdtree'}, { cmd = 'NERDTree', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'nerdtree'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('NERDTree ', 'cmdline')
+      end})
 time([[Defining lazy-load commands]], false)
 
 
