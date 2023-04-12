@@ -36,3 +36,8 @@ set signcolumn=yes
 set signcolumn=number "puts gutter inside the line count
 "highlight SignColumn guibg=darkgrey " gutter color
 "highlight clear SignColumn " same color as bg
+
+let $MYCONFIG_DIR="~/.config/nvim"
+command Config vsplit $MYCONFIG_DIR
+command ConfigReload source $MYVIMRC
+

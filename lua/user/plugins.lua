@@ -58,7 +58,7 @@ return require('packer').startup(function(use)
         --use _ instead of - !!!
     require("lspconfig").clangd.setup {}
     require("lspconfig").jedi_language_server.setup{}
-    require("lspconfig").sumneko_lua.setup {}
+    require("lspconfig").lua_ls.setup {}
     require("lspconfig").rust_analyzer.setup {}
     --[[
         :Mason ; choose and install LSPs
