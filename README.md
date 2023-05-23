@@ -27,6 +27,13 @@ and change the branch to nvim-lua
 :PackerSync
 ```
 
+Then do the small fixes:
+```
+sudo apt install --yes -- python3-venv # for COQ
+sudo apt install ripgrep # for Rg
+```
+inside VIM run :Rg so the prompt to download the fzf binaries show (COQ thing)
+
 ## For NeoVim (.vim config file)
 
 
