@@ -14,7 +14,6 @@ colorscheme gruvbox
 set guicursor=i:block " for NVIM, makes cursor a block, not a bar
 set cursorline " highlights current line
 set mouse=a " enable mouse interaction
-set clipboard=unnamedplus   " using system clipboard
 "set encoding=UTF-8 " NVIM uses utf-8 by default
 
 " setting up proper tabs
@@ -41,3 +40,4 @@ let $MYCONFIG_DIR="~/.config/nvim"
 command Config vsplit $MYCONFIG_DIR
 command ConfigReload source $MYVIMRC
 
+set clipboard=unnamedplus   " using system clipboard

@@ -16,6 +16,11 @@ return require('packer').startup(function(use)
     -- File Browser
     --   :NERDTree
     use {'scrooloose/nerdtree', cmd = {'NERDTree', 'NT'} } --invoke on command only
+    -- Buffer Manager
+    use {'nvim-lua/plenary.nvim'}  -- basic dependency
+    use {'j-morano/buffer_manager.nvim'}
+    -- custom commmand to invoke the buffer manager. I like explicit and long comments instead of shortcuts
+    vim.api.nvim_create_user_command('Buffer', 'command Buffer lua require("buffer_manager.ui").toggle_quick_menu()', {})
 
     -- Color Schemes
     vim.cmd "set termguicolors"
@@ -60,7 +65,7 @@ return require('packer').startup(function(use)
     require("lspconfig").jedi_language_server.setup{}
     require("lspconfig").lua_ls.setup {}
     require("lspconfig").rust_analyzer.setup {}
-    --require("lspconfig").ruby_ls.setup {}
+    require("lspconfig").ruby_ls.setup {}
     --[[
         :Mason ; choose and install LSPs
             while editing a file; :LspInstall works like :Mason or :MasonInstall
