@@ -40,4 +40,5 @@ let $MYCONFIG_DIR="~/.config/nvim"
 command Config vsplit $MYCONFIG_DIR
 command ConfigReload source $MYVIMRC
 
+" apt install xclip # to interact with clipboard from nvim
 set clipboard=unnamedplus   " using system clipboard

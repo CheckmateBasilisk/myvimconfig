@@ -65,7 +65,8 @@ return require('packer').startup(function(use)
     require("lspconfig").jedi_language_server.setup{}
     require("lspconfig").lua_ls.setup {}
     require("lspconfig").rust_analyzer.setup {}
-    require("lspconfig").ruby_ls.setup {}
+    require("lspconfig").ruby_lsp.setup {}
+    require("lspconfig").dockerls.setup {}
     --[[
         :Mason ; choose and install LSPs
             while editing a file; :LspInstall works like :Mason or :MasonInstall
