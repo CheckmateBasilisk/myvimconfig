@@ -16,6 +16,7 @@ return require('packer').startup(function(use)
     -- File Browser
     --   :NERDTree
     use {'scrooloose/nerdtree', cmd = {'NERDTree', 'NT'} } --invoke on command only
+    vim.g.NERDTreeShowHidden=1
     -- Buffer Manager
     use {'nvim-lua/plenary.nvim'}  -- basic dependency
     use {'j-morano/buffer_manager.nvim'}
@@ -67,6 +68,8 @@ return require('packer').startup(function(use)
     require("lspconfig").rust_analyzer.setup {}
     require("lspconfig").ruby_lsp.setup {}
     require("lspconfig").dockerls.setup {}
+    require("lspconfig").gopls.setup{}
+    require("lspconfig").sqlls.setup{}
     --[[
         :Mason ; choose and install LSPs
             while editing a file; :LspInstall works like :Mason or :MasonInstall
@@ -94,6 +97,7 @@ return require('packer').startup(function(use)
     --Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'} -- 9000+ snippets
     --]]
     use {'ms-jpq/coq_nvim', branch = 'coq'}
+    -- coq snippets, <c-h> jumps to next mark (thing to be replaced in snippet)
     use {'ms-jpq/coq.artifacts', branch = 'artifacts'} -- 9000+ snippets
     -- run once to compile the snippets :COQsnips compile
     --  <C-h> to jump to fields in snippets
